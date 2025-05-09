@@ -9,7 +9,12 @@ export default defineConfig({
   },
   build: {
     outDir: '../dist',
-    modulePreload: false,
+    emptyOutDir: true,
+    target: 'es2022',
+    inputGlobPatterns: ['src/pages/**/*.html'],
+    modulePreload: {
+      resolveDependencies: false,
+    },
   },
   plugins: [react()],
 });
